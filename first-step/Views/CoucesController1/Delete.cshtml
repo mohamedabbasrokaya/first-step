@@ -1,0 +1,32 @@
+﻿@model cource
+@{
+    ViewData["Title"] = "Delete";
+
+}
+
+<h1>Delete cource</h1>
+<br />
+<br />
+<h3>Are You Sure to Delete This cource</h3>
+<div class="row">
+    <div class="col-6">
+        <form asp-action="Delete" asp-controller="Employee">
+            <input hidden asp-for="id" />
+            <div class="form-group">
+                <label asp-for="@Model.name" class="col-form-label"></label>
+                <input asp-for="@Model.name" class="form-control" readonly />
+            </div>
+            
+
+            <input type="submit" class="btn btn-danger" value="Delete" /> |
+            <a class="btn btn-light" asp-action="Index">Back To List</a>
+        </form>
+
+    </div>
+
+</div>
+
+
+
+
+

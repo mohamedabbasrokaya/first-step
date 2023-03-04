@@ -1,0 +1,34 @@
+﻿@model cource
+@{
+    ViewData["Title"] = "Add";
+    var cource = new SelectList(ViewBag.cource, "Id", "Name");
+
+}
+
+<h1>Add New cource</h1>
+<br />
+<br />
+
+<div class="row">
+    <div class="col-6">
+        <form asp-action="Create" asp-controller="cource"> 
+            <div class="form-group">
+                <label asp-for="@Model.name" class="col-form-label"></label>
+                <input asp-for="@Model.name" class="form-control"/>
+                <span asp-validation-for="@Model.name" class="text-danger"></span>
+            </div>
+            
+            <br />
+            <input type="submit" value="Add" class="btn btn-primary"/>
+            <a asp-action="Index" class="btn btn-light">Back To List</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+
+
+    <partial  name="_ValidationScriptsPartial"/>
+   
+}
+
